@@ -1,0 +1,50 @@
+diff -Naur woodstox-4.1.2.orig/pom.xml woodstox-4.1.2/pom.xml
+--- woodstox-4.1.2.orig/pom.xml	2011-09-13 16:42:35.000000000 +0200
++++ woodstox-4.1.2/pom.xml	2011-09-13 17:06:29.294138547 +0200
+@@ -32,6 +32,21 @@
+       <artifactId>stax2-api</artifactId>
+       <version>@REQ_STAX2_VERSION@</version>
+     </dependency>
++    <dependency>
++      <groupId>net.java.dev.msv</groupId>
++      <artifactId>msv-core</artifactId>
++      <version>2009.1</version>
++    </dependency>
++    <dependency>
++      <groupId>org.apache.felix</groupId>
++      <artifactId>org.osgi.core</artifactId>
++      <version>4.1.0</version>
++    </dependency>
++    <dependency>
++      <groupId>net.java.dev.msv</groupId>
++      <artifactId>xsdlib</artifactId>
++      <version>2009.1</version>
++    </dependency>
+   </dependencies>
+ 
+   <!-- Licensing (joy!) -->
+diff -Naur woodstox-4.1.2.orig/pom-lgpl.xml woodstox-4.1.2/pom-lgpl.xml
+--- woodstox-4.1.2.orig/pom-lgpl.xml	2011-09-13 16:42:35.000000000 +0200
++++ woodstox-4.1.2/pom-lgpl.xml	2011-09-13 17:06:29.294138547 +0200
+@@ -32,6 +32,21 @@
+       <artifactId>stax2-api</artifactId>
+       <version>@REQ_STAX2_VERSION@</version>
+     </dependency>
++    <dependency>
++      <groupId>net.java.dev.msv</groupId>
++      <artifactId>msv-core</artifactId>
++      <version>2009.1</version>
++    </dependency>
++    <dependency>
++      <groupId>org.apache.felix</groupId>
++      <artifactId>org.osgi.core</artifactId>
++      <version>4.1.0</version>
++    </dependency>
++    <dependency>
++      <groupId>net.java.dev.msv</groupId>
++      <artifactId>xsdlib</artifactId>
++      <version>2009.1</version>
++    </dependency>
+   </dependencies>
+ 
+   <!-- Licensing (joy!) -->
