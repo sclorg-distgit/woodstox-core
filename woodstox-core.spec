@@ -8,7 +8,7 @@
 
 Name:             %{?scl_prefix}%{pkg_name}
 Version:          4.1.2
-Release:          8.10%{?dist}
+Release:          8.11%{?dist}
 Summary:          High-performance XML processor
 License:          ASL 2.0 or LGPLv2+
 URL:              http://%{base_name}.codehaus.org/
@@ -20,11 +20,11 @@ Patch1:           %{pkg_name}-fsf-address.patch
 
 BuildArch:        noarch
 
-BuildRequires:    maven30-felix-osgi-core
+BuildRequires:    %{?scl_prefix}felix-osgi-core
 BuildRequires:    %{?scl_prefix_java_common}relaxngDatatype
 BuildRequires:    %{?scl_prefix_java_common}msv-xsdlib
 BuildRequires:    %{?scl_prefix_java_common}msv-msv
-BuildRequires:    maven30-stax2-api
+BuildRequires:    %{?scl_prefix}stax2-api
 BuildRequires:    %{?scl_prefix_java_common}maven-local
 BuildRequires:    %{?scl_prefix_java_common}javapackages-tools
 
@@ -44,7 +44,7 @@ This package contains the API documentation for %{pkg_name}.
 
 %prep
 %setup -q -n %{base_name}-%{version}
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 
 cp src/maven/%{pkg_name}-asl.pom pom.xml
@@ -79,14 +79,14 @@ mv -f src/test/wstxtest src/test/java/
 %{?scl:EOF}
 
 %build
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 # stax2 missing -> cannot compile tests -> tests skipped
 %mvn_build -f
 %{?scl:EOF}
 
 %install
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 %mvn_install
 
@@ -102,6 +102,9 @@ install -Dpm 644 pom-lgpl.xml %{buildroot}%{_mavenpomdir}/JPP-%{pkg_name}-lgpl.p
 %doc release-notes/asl/ASL2.0 release-notes/lgpl/LGPL2.1
 
 %changelog
+* Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 4.1.2-8.11
+- maven33 rebuild #2
+
 * Sat Jan 09 2016 Michal Srb <msrb@redhat.com> - 4.1.2-8.10
 - maven33 rebuild
 
