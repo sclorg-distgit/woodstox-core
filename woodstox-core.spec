@@ -8,7 +8,7 @@
 
 Name:             %{?scl_prefix}%{pkg_name}
 Version:          4.1.2
-Release:          8.11%{?dist}
+Release:          8.12%{?dist}
 Summary:          High-performance XML processor
 License:          ASL 2.0 or LGPLv2+
 URL:              http://%{base_name}.codehaus.org/
@@ -25,7 +25,7 @@ BuildRequires:    %{?scl_prefix_java_common}relaxngDatatype
 BuildRequires:    %{?scl_prefix_java_common}msv-xsdlib
 BuildRequires:    %{?scl_prefix_java_common}msv-msv
 BuildRequires:    %{?scl_prefix}stax2-api
-BuildRequires:    %{?scl_prefix_java_common}maven-local
+BuildRequires:    %{?scl_prefix}maven-local
 BuildRequires:    %{?scl_prefix_java_common}javapackages-tools
 
 
@@ -102,6 +102,9 @@ install -Dpm 644 pom-lgpl.xml %{buildroot}%{_mavenpomdir}/JPP-%{pkg_name}-lgpl.p
 %doc release-notes/asl/ASL2.0 release-notes/lgpl/LGPL2.1
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 4.1.2-8.12
+- Fix BR on maven-local & co.
+
 * Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 4.1.2-8.11
 - maven33 rebuild #2
 
